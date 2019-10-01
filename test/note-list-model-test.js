@@ -13,7 +13,7 @@
     if (noteList.allNotes()[0] !== "hello world") {
       throw new Error("List does not include the new note")
     }
-};
+  };
 
-testNoteListModel();
+  testNoteListModel();
 })(this);
