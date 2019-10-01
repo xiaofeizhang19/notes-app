@@ -1,10 +1,10 @@
 (function(exports) {
-    function NoteListView(NoteList) {
-        this.NoteList = NoteList;
+    function NoteListView(noteList) {
+        this.noteList = noteList;
     };
 
     NoteListView.prototype.returnHTMLString = function() {
-        const newArray = this.NoteList.notes.map(function(element) {
+        const newArray = this.noteList.allNotes().map(function(element) {
             return `<li><div>${element}</div></li>`;
         }) 
         const newString = newArray.join('');
