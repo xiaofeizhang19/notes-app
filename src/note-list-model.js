@@ -1,6 +1,7 @@
 (function(exports) {
   function NoteList() {
     this.notes = [];
+    this.noteId = 0;
   };
 
   NoteList.prototype.allNotes = function() {
@@ -8,7 +9,8 @@
   };
 
   NoteList.prototype.addNew = function(text) {
-    this.notes.push(text);
+    this.notes.push(new Note(this.noteId, text));
+    this.noteId++;
   }
 
   exports.NoteList = NoteList;

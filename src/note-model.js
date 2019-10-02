@@ -1,10 +1,11 @@
 (function(exports) {
-  function Note(text) {
-    this._note = text;
+  function Note(id, text) {
+    this.id = id,
+    this.text = text
   };
 
-  Note.prototype.newNote = function() {
-    return this._note;
+  Note.prototype.returnText = function() {
+    return this.text;
   };
 
   exports.Note = Note;

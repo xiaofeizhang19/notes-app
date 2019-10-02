@@ -1,19 +1,17 @@
-(function(exports) {
-  function testNoteListModel() {
-    var noteList = new NoteList();
+testAddNewNote = function() {
+  var noteList = new NoteList();
+  noteList.addNew("Text 1");
+  assert.isTrue(noteList.allNotes().length === 1);
+  assert.isTrue(noteList.allNotes()[0].returnText() === "Text 1");
+};
+testAddNewNote();
 
-    if (noteList.allNotes().length !== 0 || noteList.allNotes() === undefined){
-      throw new Error("List is not an empty array")
-    }
-
-    noteList.addNew("hello world");
-    if (noteList.allNotes().length !== 1) {
-      throw new Error("List does not have one note")
-    }
-    if (noteList.allNotes()[0] !== "hello world") {
-      throw new Error("List does not include the new note")
-    }
-  };
-
-  testNoteListModel();
-})(this);
+testAddMultiNotes = function() {
+  var noteList = new NoteList();
+  noteList.addNew("Text 1");
+  noteList.addNew("Text 2");
+  assert.isTrue(noteList.allNotes().length === 2);
+  assert.isTrue(noteList.allNotes()[0].returnText() === "Text 1");
+  assert.isTrue(noteList.allNotes()[1].returnText() === "Text 2");
+};
+testAddMultiNotes();

@@ -1,12 +1,19 @@
-(function(exports) {
-  function testNoteListHTML() {
-    var noteList = new NoteList();
-    noteList.addNew("Bonjour");
-    var noteListView = new NoteListView(noteList);
-    if (noteListView.returnHTMLString() !== "<ul><li><div>Bonjour</div></li></ul>") {
-      throw new Error("HTML string not found")
-    }
-  };
+function testSingleNoteListHTML() {
+  var noteList = new NoteList();
+  noteList.addNew("Bonjour");
+  var noteListView = new NoteListView(noteList);
 
-  testNoteListHTML();
-})(this);
+  assert.isTrue(noteListView.returnHTMLString() === "<ul><li><div>Bonjour</div></li></ul>");
+};
+testSingleNoteListHTML();
+
+function testMultiNoteListHTML() {
+  var noteList = new NoteList();
+  noteList.addNew("Bonjour");
+  noteList.addNew("Hola");
+  var noteListView = new NoteListView(noteList);
+
+  assert.isTrue(noteListView.returnHTMLString() === 
+    "<ul><li><div>Bonjour</div></li><li><div>Hola</div></li></ul>");
+  };
+testMultiNoteListHTML();
