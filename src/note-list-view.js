@@ -5,7 +5,7 @@
 
   NoteListView.prototype.returnHTMLString = function() {
     const renderNotesArray = this.noteList.allNotes().map(function(element) {
-      return `<li><div>${element.returnText().slice(0, 20)}</div></li>`;
+      return `<li><a href="#notes/${element.id}">${element.returnText().slice(0, 20)}</a></li>`;
     }) 
     const htmlString = renderNotesArray.join('');
       return '<ul>' + htmlString + '</ul>';

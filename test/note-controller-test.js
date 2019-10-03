@@ -6,6 +6,6 @@ function testNoteController() {
   let obj = document.getElementById('notes');
   noteController.insertHTML(obj);
   assert.isTrue(obj.innerHTML === 
-    "<ul><li><div>Carpe diem. Seize th</div></li></ul>");
+    '<ul><li><a href="#notes/0">Carpe diem. Seize th</a></li></ul>');
 }
 testNoteController();
