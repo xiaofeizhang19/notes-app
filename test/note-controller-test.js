@@ -17,8 +17,17 @@ function testDisplayNotes() {
   testList.addNew('Hope is a good thing, maybe the best of things, and no good thing ever dies.');
   testList.addNew('After all, tomorrow is another day!');
   testList.addNew('Is life always this hard, or is it just when you\'re a kid?');
-  
   let testController = new NoteController(testList);
   testController.insertHTML(document.getElementById('notes'));
 }
 testDisplayNotes();
+
+// function testDiplayFullNote() {
+//   let testList = new NoteList();
+//   testList.addNew('Hope is a good thing, maybe the best of things, and no good thing ever dies.');
+
+//   let testController = new NoteController(testList);
+//   testController.insertHTML(document.getElementById('notes'));
+
+// }
+// testDiplayFullNote();
